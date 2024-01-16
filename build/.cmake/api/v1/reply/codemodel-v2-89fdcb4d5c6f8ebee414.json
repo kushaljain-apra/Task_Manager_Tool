@@ -48,7 +48,8 @@
 					"source" : "src",
 					"targetIndexes" : 
 					[
-						2
+						2,
+						4
 					]
 				},
 				{
@@ -63,7 +64,8 @@
 					"source" : "example",
 					"targetIndexes" : 
 					[
-						3
+						3,
+						5
 					]
 				}
 			],
@@ -84,7 +86,9 @@
 						0,
 						1,
 						2,
-						3
+						3,
+						4,
+						5
 					]
 				}
 			],
@@ -93,7 +97,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-ALL_BUILD-Debug-f10d1ebda241fbea076f.json",
+					"jsonFile" : "target-ALL_BUILD-Debug-ef5639bf42f9e23b220b.json",
 					"name" : "ALL_BUILD",
 					"projectIndex" : 0
 				},
@@ -107,15 +111,29 @@
 				{
 					"directoryIndex" : 2,
 					"id" : "hello::@145eef247bfb46b6828c",
-					"jsonFile" : "target-hello-Debug-be75aca4dc65a4c6a334.json",
+					"jsonFile" : "target-hello-Debug-1a853f133b023ee32146.json",
 					"name" : "hello",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 3,
 					"id" : "helloworld::@70983d692f648185febe",
-					"jsonFile" : "target-helloworld-Debug-cf2171e1ccae5866452f.json",
+					"jsonFile" : "target-helloworld-Debug-8a6b5ed6184e84092dd5.json",
 					"name" : "helloworld",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "task::@145eef247bfb46b6828c",
+					"jsonFile" : "target-task-Debug-455c1ad917ecb52b76d0.json",
+					"name" : "task",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "testtask::@70983d692f648185febe",
+					"jsonFile" : "target-testtask-Debug-a09669a0cfb1e46a8dc9.json",
+					"name" : "testtask",
 					"projectIndex" : 0
 				}
 			]
@@ -167,7 +185,8 @@
 					"source" : "src",
 					"targetIndexes" : 
 					[
-						2
+						2,
+						4
 					]
 				},
 				{
@@ -182,7 +201,8 @@
 					"source" : "example",
 					"targetIndexes" : 
 					[
-						3
+						3,
+						5
 					]
 				}
 			],
@@ -203,7 +223,9 @@
 						0,
 						1,
 						2,
-						3
+						3,
+						4,
+						5
 					]
 				}
 			],
@@ -212,7 +234,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-ALL_BUILD-Release-f10d1ebda241fbea076f.json",
+					"jsonFile" : "target-ALL_BUILD-Release-ef5639bf42f9e23b220b.json",
 					"name" : "ALL_BUILD",
 					"projectIndex" : 0
 				},
@@ -226,15 +248,29 @@
 				{
 					"directoryIndex" : 2,
 					"id" : "hello::@145eef247bfb46b6828c",
-					"jsonFile" : "target-hello-Release-b26eb5599450a9175801.json",
+					"jsonFile" : "target-hello-Release-213f1316b7b83ec63c56.json",
 					"name" : "hello",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 3,
 					"id" : "helloworld::@70983d692f648185febe",
-					"jsonFile" : "target-helloworld-Release-256e616875edde506cf9.json",
+					"jsonFile" : "target-helloworld-Release-d684b2a2a33a22b031a6.json",
 					"name" : "helloworld",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "task::@145eef247bfb46b6828c",
+					"jsonFile" : "target-task-Release-60531c6c70e980bf875e.json",
+					"name" : "task",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "testtask::@70983d692f648185febe",
+					"jsonFile" : "target-testtask-Release-fd6e7e79756c9861b49b.json",
+					"name" : "testtask",
 					"projectIndex" : 0
 				}
 			]
@@ -286,7 +322,8 @@
 					"source" : "src",
 					"targetIndexes" : 
 					[
-						2
+						2,
+						4
 					]
 				},
 				{
@@ -301,7 +338,8 @@
 					"source" : "example",
 					"targetIndexes" : 
 					[
-						3
+						3,
+						5
 					]
 				}
 			],
@@ -322,7 +360,9 @@
 						0,
 						1,
 						2,
-						3
+						3,
+						4,
+						5
 					]
 				}
 			],
@@ -331,7 +371,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-ALL_BUILD-MinSizeRel-f10d1ebda241fbea076f.json",
+					"jsonFile" : "target-ALL_BUILD-MinSizeRel-ef5639bf42f9e23b220b.json",
 					"name" : "ALL_BUILD",
 					"projectIndex" : 0
 				},
@@ -345,15 +385,29 @@
 				{
 					"directoryIndex" : 2,
 					"id" : "hello::@145eef247bfb46b6828c",
-					"jsonFile" : "target-hello-MinSizeRel-8d3841728bf1ba23dc02.json",
+					"jsonFile" : "target-hello-MinSizeRel-df7a1ffb38655daa1bd7.json",
 					"name" : "hello",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 3,
 					"id" : "helloworld::@70983d692f648185febe",
-					"jsonFile" : "target-helloworld-MinSizeRel-afca18a7bb4eda336116.json",
+					"jsonFile" : "target-helloworld-MinSizeRel-71207dcc1a84d1fa21f8.json",
 					"name" : "helloworld",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "task::@145eef247bfb46b6828c",
+					"jsonFile" : "target-task-MinSizeRel-3b106fd0e5da5a7296c3.json",
+					"name" : "task",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "testtask::@70983d692f648185febe",
+					"jsonFile" : "target-testtask-MinSizeRel-fb457131d022e892fd7f.json",
+					"name" : "testtask",
 					"projectIndex" : 0
 				}
 			]
@@ -405,7 +459,8 @@
 					"source" : "src",
 					"targetIndexes" : 
 					[
-						2
+						2,
+						4
 					]
 				},
 				{
@@ -420,7 +475,8 @@
 					"source" : "example",
 					"targetIndexes" : 
 					[
-						3
+						3,
+						5
 					]
 				}
 			],
@@ -441,7 +497,9 @@
 						0,
 						1,
 						2,
-						3
+						3,
+						4,
+						5
 					]
 				}
 			],
@@ -450,7 +508,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-ALL_BUILD-RelWithDebInfo-f10d1ebda241fbea076f.json",
+					"jsonFile" : "target-ALL_BUILD-RelWithDebInfo-ef5639bf42f9e23b220b.json",
 					"name" : "ALL_BUILD",
 					"projectIndex" : 0
 				},
@@ -464,15 +522,29 @@
 				{
 					"directoryIndex" : 2,
 					"id" : "hello::@145eef247bfb46b6828c",
-					"jsonFile" : "target-hello-RelWithDebInfo-0eebef52e365d1ad316e.json",
+					"jsonFile" : "target-hello-RelWithDebInfo-487d390c2535b90c9704.json",
 					"name" : "hello",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 3,
 					"id" : "helloworld::@70983d692f648185febe",
-					"jsonFile" : "target-helloworld-RelWithDebInfo-86cab9352a4c8cecab68.json",
+					"jsonFile" : "target-helloworld-RelWithDebInfo-e6bc737cc02c5411aa00.json",
 					"name" : "helloworld",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "task::@145eef247bfb46b6828c",
+					"jsonFile" : "target-task-RelWithDebInfo-8ca318c02a8b3048b573.json",
+					"name" : "task",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "testtask::@70983d692f648185febe",
+					"jsonFile" : "target-testtask-RelWithDebInfo-eaba6d686de9f557e604.json",
+					"name" : "testtask",
 					"projectIndex" : 0
 				}
 			]

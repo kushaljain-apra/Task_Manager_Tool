@@ -12,7 +12,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "src/Debug/hello.lib"
+			"path" : "src/RelWithDebInfo/hello.lib"
 		}
 	],
 	"backtrace" : 2,
@@ -49,7 +49,7 @@
 			{
 				"command" : 2,
 				"file" : 1,
-				"line" : 5,
+				"line" : 6,
 				"parent" : 0
 			}
 		]
@@ -60,7 +60,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1"
+					"fragment" : "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MD /Zi /O2 /Ob1 /DNDEBUG"
 				}
 			],
 			"includes" : 

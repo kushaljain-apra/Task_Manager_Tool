@@ -8,6 +8,9 @@
       <FullPath>C:\Users\developer\Task_Manager_Tool\build\example\Debug\helloworld.exe</FullPath>
     </ProjectOutput>
     <ProjectOutput>
+      <FullPath>C:\Users\developer\Task_Manager_Tool\build\example\Debug\testtask.exe</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
       <FullPath>C:\Users\developer\Task_Manager_Tool\build\x64\Debug\ALL_BUILD</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
