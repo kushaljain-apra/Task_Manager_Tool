@@ -32,6 +32,14 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
   set(CMAKE_CROSSCOMPILING "FALSE")
 endif()
 
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for each subdirectory.
+  include("C:/Users/developer/Task_Manager_Tool/build/include/cmake_install.cmake")
+  include("C:/Users/developer/Task_Manager_Tool/build/src/cmake_install.cmake")
+  include("C:/Users/developer/Task_Manager_Tool/build/example/cmake_install.cmake")
+
+endif()
+
 if(CMAKE_INSTALL_COMPONENT)
   set(CMAKE_INSTALL_MANIFEST "install_manifest_${CMAKE_INSTALL_COMPONENT}.txt")
 else()
