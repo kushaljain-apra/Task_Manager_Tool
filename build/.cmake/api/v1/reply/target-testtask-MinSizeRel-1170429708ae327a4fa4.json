@@ -2,10 +2,10 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "example/Release/testtask.exe"
+			"path" : "example/MinSizeRel/testtask.exe"
 		},
 		{
-			"path" : "example/Release/testtask.pdb"
+			"path" : "example/MinSizeRel/testtask.pdb"
 		}
 	],
 	"backtrace" : 2,
@@ -53,7 +53,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MD /O2 /Ob2 /DNDEBUG"
+					"fragment" : "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MD /O1 /Ob1 /DNDEBUG"
 				}
 			],
 			"includes" : 
@@ -73,11 +73,11 @@
 	"dependencies" : 
 	[
 		{
-			"backtrace" : 3,
-			"id" : "task::@145eef247bfb46b6828c"
+			"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df"
 		},
 		{
-			"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df"
+			"backtrace" : 3,
+			"id" : "task::@145eef247bfb46b6828c"
 		}
 	],
 	"id" : "testtask::@70983d692f648185febe",
@@ -86,7 +86,7 @@
 		"commandFragments" : 
 		[
 			{
-				"fragment" : "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MD /O2 /Ob2 /DNDEBUG",
+				"fragment" : "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MD /O1 /Ob1 /DNDEBUG",
 				"role" : "flags"
 			},
 			{
@@ -95,7 +95,7 @@
 			},
 			{
 				"backtrace" : 3,
-				"fragment" : "..\\src\\Release\\task.lib",
+				"fragment" : "..\\src\\MinSizeRel\\task.lib",
 				"role" : "libraries"
 			},
 			{

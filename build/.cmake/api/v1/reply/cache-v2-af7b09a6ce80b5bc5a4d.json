@@ -1011,10 +1011,10 @@
 				},
 				{
 					"name" : "HELPSTRING",
-					"value" : "No help, variable specified on the command line."
+					"value" : "The CMake toolchain file"
 				}
 			],
-			"type" : "UNINITIALIZED",
+			"type" : "FILEPATH",
 			"value" : "C:/Users/developer/Task_Manager_Tool/vcpkg/scripts/buildsystems/vcpkg.cmake"
 		},
 		{
