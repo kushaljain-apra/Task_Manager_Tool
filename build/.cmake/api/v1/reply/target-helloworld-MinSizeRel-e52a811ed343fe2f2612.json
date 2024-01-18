@@ -56,13 +56,6 @@
 					"fragment" : "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MD /O1 /Ob1 /DNDEBUG"
 				}
 			],
-			"includes" : 
-			[
-				{
-					"backtrace" : 3,
-					"path" : "C:/Users/developer/Task_Manager_Tool/src/../include"
-				}
-			],
 			"language" : "CXX",
 			"sourceIndexes" : 
 			[
@@ -72,10 +65,6 @@
 	],
 	"dependencies" : 
 	[
-		{
-			"backtrace" : 3,
-			"id" : "hello::@145eef247bfb46b6828c"
-		},
 		{
 			"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df"
 		}
@@ -95,7 +84,7 @@
 			},
 			{
 				"backtrace" : 3,
-				"fragment" : "..\\src\\MinSizeRel\\hello.lib",
+				"fragment" : "hello.lib",
 				"role" : "libraries"
 			},
 			{

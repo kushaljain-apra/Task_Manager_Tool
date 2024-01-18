@@ -6,7 +6,7 @@
 class Task{
     public:
         // Constructors
-        Task(int id, const std::string& title, const std::string& description);
+        Task(int Taskid, const std::string& Title, const std::string& Description);
 
         // Getters
         int get_id() const;
@@ -14,16 +14,18 @@ class Task{
         std::string get_description() const;
         bool getTaskstatus() const;
         bool getTaskReadStatus() const;
-        void printTask() const;
 
         // Setters
         void setTaskstatus(bool TaskStatus);
         void setTaskReadStatus(bool TaskReadStatus);
+
+        // Display Methods
+        void printTask() const;
     
     private:
-        int id;
-        std::string title;
-        std::string description;
+        int Taskid;
+        std::string Title;
+        std::string Description;
         bool TaskStatus;
         bool TaskReadStatus;
 
