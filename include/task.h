@@ -12,16 +12,21 @@ class Task{
         int get_id() const;
         std::string get_title() const;
         std::string get_description() const;
-        bool isCompleted() const;
+        bool getTaskstatus() const;
+        bool getTaskReadStatus() const;
+        void printTask() const;
 
         // Setters
-        void setAsCompleted(bool completed);
+        void setTaskstatus(bool TaskStatus);
+        void setTaskReadStatus(bool TaskReadStatus);
     
     private:
         int id;
         std::string title;
         std::string description;
-        bool completed;
+        bool TaskStatus;
+        bool TaskReadStatus;
+
 };
 
 using Taskptr = std::shared_ptr<Task>;
