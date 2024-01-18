@@ -13,14 +13,19 @@ class User{
         // getters
         int get_Userid() const;
         std::string get_Username() const;
-        std::string get_Password() const; 
+        std::string get_Password() const;
+        int getNewTasks() const; 
 
         // setters
+        void Login(const std::string& Username ,const std::string& Password);
+        void Login(int Userid, const std::string& Password);
         void addTask(const Taskptr& userTask);
         void deleteTask(int Taskid);
         void TaskStatusUpdate(int Taskid, bool Status);
 
         // Display Tasks
+        void displayNotification();
+        void displayNewTasks();
         void displayAllUserTasks();
         void displayTaskbyId(int Taskid);
         void displayUser();
