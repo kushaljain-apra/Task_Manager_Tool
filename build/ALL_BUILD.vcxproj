@@ -193,6 +193,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <Project>{C7EE8BD8-8968-3415-BDE8-5097A2DE9786}</Project>
       <Name>taskmanager</Name>
     </ProjectReference>
+    <ProjectReference Include="C:\Users\developer\Task_Manager_Tool\build\example\test_admin.vcxproj">
+      <Project>{4868692D-37CA-3E35-9A19-95D1933B91C0}</Project>
+      <Name>test_admin</Name>
+    </ProjectReference>
     <ProjectReference Include="C:\Users\developer\Task_Manager_Tool\build\example\test_task.vcxproj">
       <Project>{F173668D-F41F-3202-BB55-989333A60010}</Project>
       <Name>test_task</Name>

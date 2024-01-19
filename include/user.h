@@ -14,14 +14,17 @@ class User{
         int get_Userid() const;
         std::string get_Username() const;
         std::string get_Password() const;
-        int getNewTasks() const; 
+        int getNewTasks() const;
+        bool checkTask(int Taskid);
+        Taskptr getTaskbyId(int Taskid);
+        std::vector<int> getUsertaskIds();
 
         // setters
-        void Login(const std::string& Username ,const std::string& Password);
-        void Login(int Userid, const std::string& Password);
+        void login(const std::string& Username ,const std::string& Password);
+        void login(int Userid, const std::string& Password);
         void addTask(const Taskptr& userTask);
         void deleteTask(int Taskid);
-        void TaskStatusUpdate(int Taskid, bool Status);
+        void taskStatusUpdate(int Taskid, bool Status);
 
         // Display Tasks
         void displayNotification();

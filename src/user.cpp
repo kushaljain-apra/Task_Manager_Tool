@@ -31,10 +31,45 @@ int User::getNewTasks() const {
     return newTaskcount;
 }
 
-// Setters
-void User::Login(const std::string& Username, const std::string& Password){
+bool User::checkTask(int Taskid) {
+    for(auto &task: this->UserTasks){
+        if(task->get_id() == Taskid){
+            return true;
+        }
+    }
+    return false;
+}
+
+Taskptr User::getTaskbyId(int Taskid) {
     std::cout << "\n";
-    if(this->Username == Username && this->Password == Password){
+    Taskptr getTask = nullptr;
+    int numUserTasks = (int)this->UserTasks.size();
+    for(int i = 0; i < numUserTasks; i++){
+        if(this->UserTasks[i]->get_id() == Taskid){
+            getTask = this->UserTasks[i];
+            break;
+        }
+    }
+
+    if(getTask == nullptr){
+        std::cout << "No Task with Id:" << Taskid << " was found, please enter correct Task Id...\n";
+    }
+    std::cout << "\n";
+    return getTask;
+}
+
+std::vector<int> User::getUsertaskIds() {
+    std::vector<int> UserTaskids;
+    for(auto &task: this->UserTasks){
+        UserTaskids.push_back(task->get_id());
+    }
+    return UserTaskids;
+}
+
+// Setters
+void User::login(const std::string& Username, const std::string& Password){
+    std::cout << "\n";
+    if(this->get_Username() == Username && this->get_Password() == Password){
         displayNotification();
     }
     else{
@@ -43,9 +78,9 @@ void User::Login(const std::string& Username, const std::string& Password){
     std::cout << "\n";
 }
 
-void User::Login(int Userid, const std::string& Password){
+void User::login(int Userid, const std::string& Password){
     std::cout << "\n";
-    if(this->Userid == Userid && this->Password == Password){
+    if(this->get_Userid() == Userid && this->get_Password() == Password){
         displayNotification();
     }
     else{
@@ -56,41 +91,47 @@ void User::Login(int Userid, const std::string& Password){
 
 void User::addTask(const Taskptr& userTask) {
     std::cout << "\n";
-    std::cout << "Task with Id: " << userTask->get_id() << " was added with User Id: " << this->get_Userid() << " ...\n";
-    this->UserTasks.push_back(userTask);
+    if(!checkTask(userTask->get_id())){
+        std::cout << "Task with Id:" << userTask->get_id() << " was added with User Id:" << this->get_Userid() << " ...\n";
+        this->UserTasks.push_back(userTask);
+    }
+    else{
+        std::cout << "Task with Id:" << userTask->get_id() << " already exists, please enter a unique Task Id" << " ...\n";
+    }
     std::cout << "\n";
 }
 
 void User::deleteTask(int Taskid) {
     std::cout << "\n";
-    auto deleteTask = this->UserTasks.begin();
-    for(auto &task: this->UserTasks){
-        if(task->get_id() == Taskid){
-            std::cout << "Task exists, deleting the Task with Id: " << task->get_id() << "\n";
-            this->UserTasks.erase(deleteTask);
-            break;
+    if(checkTask(Taskid)){
+        auto deleteTask = this->UserTasks.begin();
+        for(auto &task: this->UserTasks){
+            if(task->get_id() == Taskid){
+                break;
+            }
+            ++deleteTask;
         }
-        ++deleteTask;
+        std::cout << "Task exists, deleting Task with Id:" << Taskid << "\n";
+        this->UserTasks.erase(deleteTask);
     }
-    
-    if(deleteTask == this->UserTasks.end()){
+    else{
         std::cout << "Task does not exist, Please enter correct task Id" << "\n";
     }
     std::cout << "\n";
 }
 
-void User::TaskStatusUpdate(int Taskid, bool Status){
+void User::taskStatusUpdate(int Taskid, bool Status){
     std::cout << "\n";
-    bool updatedTask = false;
-    for(auto &task: this->UserTasks){
-        if(task->get_id() == Taskid){
-            std::cout << "Task exists, updating the Task status with Id: " << task->get_id() << " from " << task->getTaskstatus() << " to " << Status << "\n";
-            task->setTaskstatus(Status);
-            updatedTask = true;
-            break;
+    if(checkTask(Taskid)){
+        for(auto &task: this->UserTasks){
+            if(task->get_id() == Taskid){
+                std::cout << "Task exists, updating the Task status with Id:" << task->get_id() << " from " << task->getTaskstatus() << " to " << Status << "\n";
+                task->setTaskstatus(Status);
+                break;
+            }
         }
     }
-    if(!updatedTask){
+    else{
         std::cout << "Task does not exist, Please enter correct task Id" << "\n";
     }
     std::cout << "\n";
@@ -128,21 +169,32 @@ void User::displayNewTasks(){
 
 void User::displayAllUserTasks(){
     std::cout << "\n";
+    bool taskNotFound = true;
     for(auto &task: this->UserTasks){
+        taskNotFound = false;
         task->setTaskReadStatus(true);
         task->printTask();
+    }
+    
+    if(taskNotFound){
+        std::cout << "No Tasks are assigned right now...\n";
     }
     std::cout << "\n";
 }
 
 void User::displayTaskbyId(int Taskid){
     std::cout << "\n";
-    for(auto &task: this->UserTasks){
-        if(task->get_id() == Taskid){
-            task->setTaskReadStatus(true);
-            task->printTask();
-            break;
+    if(checkTask(Taskid)){
+        for(auto &task: this->UserTasks){
+            if(task->get_id() == Taskid){
+                task->setTaskReadStatus(true);
+                task->printTask();
+                break;
+            }
         }
+    }
+    else{
+        std::cout << "Task does not exist, Please enter correct task Id" << "\n";
     }
     std::cout << "\n";
 }

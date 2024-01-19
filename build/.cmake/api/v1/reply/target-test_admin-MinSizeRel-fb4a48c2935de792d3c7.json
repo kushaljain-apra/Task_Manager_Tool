@@ -2,10 +2,10 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "example/Release/test_task.exe"
+			"path" : "example/MinSizeRel/test_admin.exe"
 		},
 		{
-			"path" : "example/Release/test_task.pdb"
+			"path" : "example/MinSizeRel/test_admin.pdb"
 		}
 	],
 	"backtrace" : 2,
@@ -30,7 +30,7 @@
 			{
 				"command" : 1,
 				"file" : 1,
-				"line" : 4,
+				"line" : 6,
 				"parent" : 0
 			},
 			{
@@ -42,7 +42,7 @@
 			{
 				"command" : 2,
 				"file" : 1,
-				"line" : 11,
+				"line" : 20,
 				"parent" : 0
 			}
 		]
@@ -53,7 +53,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MD /O2 /Ob2 /DNDEBUG"
+					"fragment" : "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MD /O1 /Ob1 /DNDEBUG"
 				}
 			],
 			"includes" : 
@@ -77,16 +77,24 @@
 			"id" : "task::@145eef247bfb46b6828c"
 		},
 		{
+			"backtrace" : 3,
+			"id" : "user::@145eef247bfb46b6828c"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "admin::@145eef247bfb46b6828c"
+		},
+		{
 			"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df"
 		}
 	],
-	"id" : "test_task::@70983d692f648185febe",
+	"id" : "test_admin::@70983d692f648185febe",
 	"link" : 
 	{
 		"commandFragments" : 
 		[
 			{
-				"fragment" : "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MD /O2 /Ob2 /DNDEBUG",
+				"fragment" : "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MD /O1 /Ob1 /DNDEBUG",
 				"role" : "flags"
 			},
 			{
@@ -95,7 +103,17 @@
 			},
 			{
 				"backtrace" : 3,
-				"fragment" : "..\\src\\Release\\task.lib",
+				"fragment" : "..\\src\\MinSizeRel\\admin.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 3,
+				"fragment" : "..\\src\\MinSizeRel\\task.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 3,
+				"fragment" : "..\\src\\MinSizeRel\\user.lib",
 				"role" : "libraries"
 			},
 			{
@@ -105,8 +123,8 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "test_task",
-	"nameOnDisk" : "test_task.exe",
+	"name" : "test_admin",
+	"nameOnDisk" : "test_admin.exe",
 	"paths" : 
 	{
 		"build" : "example",
@@ -127,7 +145,7 @@
 		{
 			"backtrace" : 2,
 			"compileGroupIndex" : 0,
-			"path" : "example/test_task.cpp",
+			"path" : "example/test_admin.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],

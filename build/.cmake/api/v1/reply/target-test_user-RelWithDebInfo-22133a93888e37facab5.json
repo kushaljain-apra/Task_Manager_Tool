@@ -2,10 +2,10 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "example/MinSizeRel/test_user.exe"
+			"path" : "example/RelWithDebInfo/test_user.exe"
 		},
 		{
-			"path" : "example/MinSizeRel/test_user.pdb"
+			"path" : "example/RelWithDebInfo/test_user.pdb"
 		}
 	],
 	"backtrace" : 2,
@@ -42,13 +42,7 @@
 			{
 				"command" : 2,
 				"file" : 1,
-				"line" : 15,
-				"parent" : 0
-			},
-			{
-				"command" : 2,
-				"file" : 1,
-				"line" : 19,
+				"line" : 16,
 				"parent" : 0
 			}
 		]
@@ -59,7 +53,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MD /O1 /Ob1 /DNDEBUG"
+					"fragment" : "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MD /Zi /O2 /Ob1 /DNDEBUG"
 				}
 			],
 			"includes" : 
@@ -79,7 +73,7 @@
 	"dependencies" : 
 	[
 		{
-			"backtrace" : 4,
+			"backtrace" : 3,
 			"id" : "task::@145eef247bfb46b6828c"
 		},
 		{
@@ -96,21 +90,21 @@
 		"commandFragments" : 
 		[
 			{
-				"fragment" : "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MD /O1 /Ob1 /DNDEBUG",
+				"fragment" : "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MD /Zi /O2 /Ob1 /DNDEBUG",
 				"role" : "flags"
 			},
 			{
-				"fragment" : "/machine:x64 /INCREMENTAL:NO /subsystem:console",
+				"fragment" : "/machine:x64 /debug /INCREMENTAL /subsystem:console",
 				"role" : "flags"
 			},
 			{
 				"backtrace" : 3,
-				"fragment" : "..\\src\\MinSizeRel\\user.lib",
+				"fragment" : "..\\src\\RelWithDebInfo\\user.lib",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 4,
-				"fragment" : "..\\src\\MinSizeRel\\task.lib",
+				"backtrace" : 3,
+				"fragment" : "..\\src\\RelWithDebInfo\\task.lib",
 				"role" : "libraries"
 			},
 			{

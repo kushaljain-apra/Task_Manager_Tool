@@ -2,10 +2,10 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "example/RelWithDebInfo/test_user.exe"
+			"path" : "example/MinSizeRel/helloworld.exe"
 		},
 		{
-			"path" : "example/RelWithDebInfo/test_user.pdb"
+			"path" : "example/MinSizeRel/helloworld.pdb"
 		}
 	],
 	"backtrace" : 2,
@@ -30,7 +30,7 @@
 			{
 				"command" : 1,
 				"file" : 1,
-				"line" : 5,
+				"line" : 3,
 				"parent" : 0
 			},
 			{
@@ -42,13 +42,7 @@
 			{
 				"command" : 2,
 				"file" : 1,
-				"line" : 15,
-				"parent" : 0
-			},
-			{
-				"command" : 2,
-				"file" : 1,
-				"line" : 19,
+				"line" : 8,
 				"parent" : 0
 			}
 		]
@@ -59,7 +53,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MD /Zi /O2 /Ob1 /DNDEBUG"
+					"fragment" : "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MD /O1 /Ob1 /DNDEBUG"
 				}
 			],
 			"includes" : 
@@ -79,38 +73,29 @@
 	"dependencies" : 
 	[
 		{
-			"backtrace" : 4,
-			"id" : "task::@145eef247bfb46b6828c"
-		},
-		{
 			"backtrace" : 3,
-			"id" : "user::@145eef247bfb46b6828c"
+			"id" : "printhello::@145eef247bfb46b6828c"
 		},
 		{
 			"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df"
 		}
 	],
-	"id" : "test_user::@70983d692f648185febe",
+	"id" : "helloworld::@70983d692f648185febe",
 	"link" : 
 	{
 		"commandFragments" : 
 		[
 			{
-				"fragment" : "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MD /Zi /O2 /Ob1 /DNDEBUG",
+				"fragment" : "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MD /O1 /Ob1 /DNDEBUG",
 				"role" : "flags"
 			},
 			{
-				"fragment" : "/machine:x64 /debug /INCREMENTAL /subsystem:console",
+				"fragment" : "/machine:x64 /INCREMENTAL:NO /subsystem:console",
 				"role" : "flags"
 			},
 			{
 				"backtrace" : 3,
-				"fragment" : "..\\src\\RelWithDebInfo\\user.lib",
-				"role" : "libraries"
-			},
-			{
-				"backtrace" : 4,
-				"fragment" : "..\\src\\RelWithDebInfo\\task.lib",
+				"fragment" : "..\\src\\MinSizeRel\\printhello.lib",
 				"role" : "libraries"
 			},
 			{
@@ -120,8 +105,8 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "test_user",
-	"nameOnDisk" : "test_user.exe",
+	"name" : "helloworld",
+	"nameOnDisk" : "helloworld.exe",
 	"paths" : 
 	{
 		"build" : "example",
@@ -142,7 +127,7 @@
 		{
 			"backtrace" : 2,
 			"compileGroupIndex" : 0,
-			"path" : "example/test_user.cpp",
+			"path" : "example/helloworld.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],

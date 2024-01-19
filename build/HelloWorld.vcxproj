@@ -366,7 +366,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="C:\Users\developer\Task_Manager_Tool\helloworld.cpp" />
+    <ClCompile Include="C:\Users\developer\Task_Manager_Tool\example\helloworld.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="C:\Users\developer\Task_Manager_Tool\build\ZERO_CHECK.vcxproj">

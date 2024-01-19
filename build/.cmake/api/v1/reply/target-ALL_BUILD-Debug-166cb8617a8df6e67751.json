@@ -20,6 +20,18 @@
 			"id" : "printhello::@145eef247bfb46b6828c"
 		},
 		{
+			"id" : "helloworld::@70983d692f648185febe"
+		},
+		{
+			"id" : "test_task::@70983d692f648185febe"
+		},
+		{
+			"id" : "test_user::@70983d692f648185febe"
+		},
+		{
+			"id" : "test_admin::@70983d692f648185febe"
+		},
+		{
 			"id" : "task::@145eef247bfb46b6828c"
 		},
 		{
@@ -30,15 +42,6 @@
 		},
 		{
 			"id" : "taskmanager::@145eef247bfb46b6828c"
-		},
-		{
-			"id" : "helloworld::@70983d692f648185febe"
-		},
-		{
-			"id" : "test_task::@70983d692f648185febe"
-		},
-		{
-			"id" : "test_user::@70983d692f648185febe"
 		},
 		{
 			"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df"

@@ -268,6 +268,9 @@ Z_VCPKG_PWSH_PATH:FILEPATH=Z_VCPKG_PWSH_PATH-NOTFOUND
 // triplet
 _VCPKG_INSTALLED_DIR:PATH=C:/Users/developer/Task_Manager_Tool/build/vcpkg_installed
 
+//The directory containing a CMake configuration file for fmt.
+fmt_DIR:PATH=C:/Users/developer/Task_Manager_Tool/build/vcpkg_installed/x64-windows/share/fmt
+
 
 ########################
 # INTERNAL cache entries
