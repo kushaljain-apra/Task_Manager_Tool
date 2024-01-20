@@ -5,6 +5,7 @@ add_library(task task.cpp)
 add_library(user user.cpp)
 add_library(admin admin.cpp)
 add_library(taskmanager taskmanager.cpp)
+add_library(inputvalidator inputvalidator.cpp)
 
 target_include_directories(printhello
     PUBLIC
@@ -27,6 +28,11 @@ target_include_directories(admin
 )
 
 target_include_directories(taskmanager
+    PUBLIC
+    ${CMAKE_CURRENT_SOURCE_DIR}/../include 
+)
+
+target_include_directories(inputvalidator
     PUBLIC
     ${CMAKE_CURRENT_SOURCE_DIR}/../include 
 )
