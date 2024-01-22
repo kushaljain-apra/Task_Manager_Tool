@@ -11,6 +11,7 @@ std::string InputValidator::ValidreadString(const std::string& message, const st
             break;
         } else {
             std::cout << err_message;
+            std::cin.clear();
         }
     }
     return userInput;
@@ -28,6 +29,7 @@ int InputValidator::ValidreadInteger(const std::string& message, const std::stri
             break;
         } else {
             std::cout << err_message;
+            std::cin.clear();
         }
     }
 
