@@ -17,6 +17,9 @@
 	"dependencies" : 
 	[
 		{
+			"id" : "printhello::@145eef247bfb46b6828c"
+		},
+		{
 			"id" : "task::@145eef247bfb46b6828c"
 		},
 		{
@@ -48,9 +51,6 @@
 		},
 		{
 			"id" : "test_taskmanager::@70983d692f648185febe"
-		},
-		{
-			"id" : "printhello::@145eef247bfb46b6828c"
 		},
 		{
 			"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df"
