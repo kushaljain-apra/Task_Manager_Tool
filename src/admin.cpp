@@ -253,8 +253,14 @@ void Admin::displayUnapprovedUsers(){
 
 void Admin::displayUsers(){
     std::cout << "\n";
-    for(auto &user: this->Users){
-        user->displayUser();
+    int numUsers = (int)this->Users.size();
+    if(numUsers > 0){
+        for(auto &user: this->Users){
+            user->displayUser();
+        }
+    }
+    else{
+
     }
     std::cout << "\n";
 }
@@ -267,6 +273,7 @@ void Admin::displayAllTasks(){
         for(auto &id: Taskids){
             taskNotFound = false;
             Taskptr task = user->getTaskbyId(id);
+            std::cout << "User Id: " << user->get_Userid() << "\n";
             task->printTask();
         }
     }
@@ -286,6 +293,7 @@ void Admin::displayUserTasks(int Userid){
             for(auto &id: Taskids){
                 taskNotFound = false;
                 Taskptr task = user->getTaskbyId(id);
+                std::cout << "User Id: " << user->get_Userid() << "\n";
                 task->printTask();
             }
             break;
@@ -305,6 +313,7 @@ void Admin::displayTaskbyId(int Taskid){
         if(user->checkTask(Taskid)){
             taskNotFound = false;
             Taskptr task = user->getTaskbyId(Taskid);
+            std::cout << "User Id: " << user->get_Userid() << "\n";
             task->printTask();
             break;
         }

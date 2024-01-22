@@ -25,13 +25,13 @@ std::string TaskManager::get_superAdminPassword() {
 // Display Methods
 void TaskManager::Welcome(){
     std::cout << "\t\t\t******************************************************************\n";
-    std::cout << "\t\t\t                Welcome to Task Manager !!!\n";
+    std::cout << "\t\t\t                    Welcome to Task Manager !!!\n";
     std::cout << "\t\t\t******************************************************************\n\n\n";
 }
 void TaskManager::HomePage() {
     while(true){
         Welcome();
-        std::cout << "Note: Please use characters before the colon for typing using any commands";
+        std::cout << "Note: Please use characters before the colon for typing using any commands\n\n";
         std::cout << "A: Admin Login\n";
         std::cout << "U: User Login\n";
         std::cout << "N: New User? Register here\n";
@@ -107,7 +107,7 @@ void TaskManager::AdminLoginPage() {
         std::cout << "\n";
 
         if(superAdmin->get_Adminid() == Adminid && superAdmin->get_Password() == Password){
-            std::cout << "Access Granted...\n";
+            std::cout << "Access Granted...\n\n\n";
             std::cout << "**************Admin Page**************\n\n";
             superAdmin->login(Adminid, Password);
             AdminPage();
@@ -130,6 +130,7 @@ void TaskManager::AdminPage() {
 
             if(command == "S"){
                 superAdmin->displayUnapprovedUsers();
+                break;
             }
             else if(command == "D"){
                 break;
@@ -247,7 +248,7 @@ void TaskManager::UserLoginPage() {
         if(superAdmin->checkUser(Userid)){
             Userptr& user = superAdmin->getUserbyId(Userid);
             if(user->get_Password() == Password){
-                std::cout << "Access Granted...\n";
+                std::cout << "Access Granted...\n\n\n";
                 std::cout << "**************User Page**************\n\n";
                 user->login(Userid, Password);
                 UserPage(user);
@@ -274,6 +275,7 @@ void TaskManager::UserPage(Userptr& user) {
 
             if(command == "S"){
                 user->displayNewTasks();
+                break;
             }
             else if(command == "D"){
                 break;
