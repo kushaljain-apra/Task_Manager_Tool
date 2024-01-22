@@ -248,11 +248,16 @@ void TaskManager::UserLoginPage() {
         if(superAdmin->checkUser(Userid)){
             Userptr& user = superAdmin->getUserbyId(Userid);
             if(user->get_Password() == Password){
-                std::cout << "Access Granted...\n\n\n";
-                std::cout << "**************User Page**************\n\n";
-                user->login(Userid, Password);
-                UserPage(user);
-                break;
+                if(superAdmin->getApproveStatus(Userid)){
+                    std::cout << "Access Granted...\n\n\n";
+                    std::cout << "**************User Page**************\n\n";
+                    user->login(Userid, Password);
+                    UserPage(user);
+                    break;
+                }else{
+                    std::cout << "You cannot login, check with admin if your Id is approved or not...\n";
+                    break;
+                }
             }
             else{
                 std::cout << "Your username or password is incorrect, please login with correct username or password... \n";
