@@ -181,6 +181,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <Project>{340CEF2C-C239-351F-ADE4-EF720C261F63}</Project>
       <Name>helloworld</Name>
     </ProjectReference>
+    <ProjectReference Include="C:\Users\developer\Task_Manager_Tool\build\src\inputvalidator.vcxproj">
+      <Project>{E22D4C14-22DC-3A53-A5C8-12D5B8569821}</Project>
+      <Name>inputvalidator</Name>
+    </ProjectReference>
     <ProjectReference Include="C:\Users\developer\Task_Manager_Tool\build\src\printhello.vcxproj">
       <Project>{F6827B33-75F8-3A18-81DC-3E394CAB43B7}</Project>
       <Name>printhello</Name>
