@@ -8,10 +8,12 @@ project(HelloWorld)
 
 add_subdirectory(include)
 add_subdirectory(src)
+add_subdirectory(main)
 
-option(BUILD_EXAMPLES "Whether to build example or not" ON)
+option(BUILD_EXAMPLES "Whether to build example or not" OFF)
 
 if (BUILD_EXAMPLES)
     message(STATUS "Building Examples...")
     add_subdirectory(example)
 endif()
+

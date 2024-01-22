@@ -2,7 +2,7 @@
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/HelloWorld")
+  set(CMAKE_INSTALL_PREFIX "C:/Program Files/HelloWorld")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -36,6 +36,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("C:/Users/developer/Task_Manager_Tool/build/include/cmake_install.cmake")
   include("C:/Users/developer/Task_Manager_Tool/build/src/cmake_install.cmake")
+  include("C:/Users/developer/Task_Manager_Tool/build/main/cmake_install.cmake")
   include("C:/Users/developer/Task_Manager_Tool/build/example/cmake_install.cmake")
 
 endif()
