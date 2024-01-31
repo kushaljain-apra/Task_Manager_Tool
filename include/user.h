@@ -8,36 +8,41 @@
 class User{
     public:
         // Constructor
-        User(int Userid, const std::string& Username, const std::string& Password);
+        User(int user_id, const std::string& username, const std::string& password);
 
-        // getters
-        int get_Userid() const;
-        std::string get_Username() const;
-        std::string get_Password() const;
+        // User getters
+        int getUserId() const;
+        std::string getUsername() const;
+        std::string getPassword() const;
+
+        // Task getters
         int getNewTasks() const;
-        bool checkTask(int Taskid);
-        Taskptr getTaskbyId(int Taskid);
-        std::vector<int> getUsertaskIds();
+        bool checkTask(int task_id);
+        Taskptr getTaskById(int task_id);
+        std::vector<int> getUserAllTaskIds();
 
-        // setters
-        void login(const std::string& Username ,const std::string& Password);
-        void login(int Userid, const std::string& Password);
-        void addTask(const Taskptr& userTask);
-        void deleteTask(int Taskid);
-        void taskStatusUpdate(int Taskid, bool Status);
+        // Login Validator
+        bool login(int user_id, const std::string& password);
 
-        // Display Tasks
-        void displayNotification();
+        // Task setters
+        void addTask(const Taskptr& user_task);
+        void deleteTask(int task_id);
+        void taskStatusUpdate(int task_id, bool task_status);
+
+        // Display Task Methods
+        void displayNotifications();
         void displayNewTasks();
         void displayAllUserTasks();
-        void displayTaskbyId(int Taskid);
+        void displayTaskById(int task_id);
+
+        // Display User Methods
         void displayUser();
 
     private:
-        int Userid;
-        std::string Username;
-        std::string Password;
-        std::vector <Taskptr> UserTasks;
+        int user_id;
+        std::string username;
+        std::string password;
+        std::vector <Taskptr> user_tasks;
 };
 
 using Userptr = std::shared_ptr<User>;

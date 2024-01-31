@@ -11,24 +11,22 @@ class TaskManager {
         TaskManager();
 
         //Getters
-        int get_superAdminid();
-        std::string get_superAdminUsername();
-        std::string get_superAdminPassword();
-
-        //Setters
+        int getSuperAdminId();
+        std::string getSuperAdminUsername();
+        std::string getSuperAdminPassword();
 
         //Display Methods
-        void Welcome();
-        void HomePage();
-        void RegisterationPage();
-        void AdminLoginPage();
-        void AdminPage();
-        void UserLoginPage();
-        void UserPage(Userptr& user);
+        void welcome();
+        void homePage();
+        void registerationPage();
+        void adminLoginPage();
+        void adminPage();
+        void userLoginPage();
+        void userPage(Userptr& user);
 
     private:
-        Adminptr superAdmin;
-        InputValidatorptr validate;
+        Adminptr super_admin;
+        InputValidatorptr validator;
 };
 
 using TaskManagerptr = std::shared_ptr<TaskManager>;

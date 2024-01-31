@@ -4,7 +4,7 @@
 
 int main(){
     TaskManagerptr taskmanager = std::make_shared<TaskManager>();
-    taskmanager->HomePage();
+    taskmanager->homePage();
     _CrtDumpMemoryLeaks();
     return 0;
 }

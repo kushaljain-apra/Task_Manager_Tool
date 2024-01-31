@@ -1,112 +1,98 @@
 #include <iostream>
-#include "task.h"
 #include "admin.h"
 
 // Constructor
-Admin::Admin(int Adminid, const std::string& Username, const std::string& Password){
-    this->Adminid = Adminid;
-    this->Username = Username;
-    this->Password = Password;
+Admin::Admin(int admin_id, const std::string& username, const std::string& password){
+    this->admin_id = admin_id;
+    this->username = username;
+    this->password = password;
 }
 
-// Getters
-int Admin::get_Adminid() const {
-    return Adminid;
+// Admin Details getters
+int Admin::getAdminId() const {
+    return admin_id;
 }
 
-std::string Admin::get_Username() const {
-    return Username;
+std::string Admin::getUsername() const {
+    return username;
 }
 
-std::string Admin::get_Password() const {
-    return Password;
+std::string Admin::getPassword() const {
+    return password;
 }
 
-bool Admin::checkUser(int Userid) {
-    for(auto &user: this->Users){
-        if(user->get_Userid() == Userid){
+// User getter methods
+bool Admin::checkUser(int user_id) {
+    for(auto &user: this->users){
+        if(user->getUserId() == user_id){
             return true;
         }
     }
     return false;
 }
 
-Userptr Admin::getUserbyId(int Userid) {
+Userptr Admin::getUserById(int user_id) {
     std::cout << "\n";
-    Userptr getUser = nullptr;
-    int numUsers = (int)this->Users.size();
-    for(int i = 0; i < numUsers; i++){
-        if(this->Users[i]->get_Userid() == Userid){
-            getUser = this->Users[i];
+    Userptr get_user = nullptr;
+    int no_of_users = (int)this->users.size();
+    for(int i = 0; i < no_of_users; i++){
+        if(this->users[i]->getUserId() == user_id){
+            get_user = this->users[i];
             break;
         }
     }
 
-    if(getUser == nullptr){
-        std::cout << "No User with Id:" << Userid << " was found, please enter correct User Id...\n";
+    if(get_user == nullptr){
+        std::cout << "No User with Id:" << user_id << " was found, please enter correct User Id...\n";
     }
     std::cout << "\n";
-    return getUser;
+    return get_user;
 }
 
-bool Admin::getApproveStatus(int Userid) {
-    if(this->approvedUsers.find(Userid) != this->approvedUsers.end()){
+bool Admin::getApproveStatus(int user_id) {
+    if(this->approved_users.find(user_id) != this->approved_users.end()){
         return true;
     }
     return false;
 }
 
 int Admin::getUnapprovedUsers() {
-    int UnapprovedUsercount = 0;
-    for(auto &user: this->Users){
-       if(!getApproveStatus(user->get_Userid())){
-            UnapprovedUsercount++;
+    int unapproved_users_count = 0;
+    for(auto &user: this->users){
+       if(!getApproveStatus(user->getUserId())){
+            unapproved_users_count++;
        } 
     }
-    return UnapprovedUsercount;
+    return unapproved_users_count;
 }
 
-// Setters
-void Admin::login(const std::string& Username, const std::string& Password) {
+// Login Validator
+bool Admin::login(int user_id, const std::string& password) {
+    if(this->getAdminId() == admin_id && this->getPassword() == password){
+        return true;
+    }
+    return false;
+}
+
+// User setter methods
+void Admin::createUser(int user_id, const std::string& username, const std::string& password) {
     std::cout << "\n";
-    if(this->get_Username() == Username && this->get_Password() == Password){
-        displayNotification();
+    if(!checkUser(user_id)){
+        Userptr user = std::make_shared<User>(user_id, username, password);
+        this->users.push_back(user);
+        std::cout << "A new user has been created with User Id:" << user_id << " and username:" << username << " ...\n";
     }
     else{
-        std::cout << "Your username or password is incorrect, please login with correct username or password... \n";
+        std::cout << "User with Id:" << user_id << " already exists, please enter a unique User Id ...\n";
     }
     std::cout << "\n";
 }
 
-void Admin::login(int Userid, const std::string& Password) {
+void Admin::approveUser(int user_id) {
     std::cout << "\n";
-    if(this->get_Adminid() == Adminid && this->get_Password() == Password){
-        displayNotification();
-    }
-    else{
-        std::cout << "Your username or password is incorrect, please login with correct username or password... \n";
-    }
-    std::cout << "\n";
-}
-
-void Admin::createUser(int Userid, const std::string& Username, const std::string& Password) {
-    std::cout << "\n";
-    if(!checkUser(Userid)){
-        Userptr user = std::make_shared<User>(Userid, Username, Password);
-        this->Users.push_back(user);
-        std::cout << "A new user has been created with User Id:" << Userid << " and Username:" << Username << " ...\n";
-    }
-    else{
-        std::cout << "User with Id:" << Userid << " already exists, please enter a unique User Id ...\n";
-    }
-    std::cout << "\n";
-}
-
-void Admin::approveUser(int Userid) {
-    std::cout << "\n";
-    if(checkUser(Userid)){
-        this->approvedUsers.insert(Userid);
-        std::cout << "User with Id: " << Userid << " has been approved...\n";
+    if(checkUser(user_id)){
+        this->approved_users.insert(user_id);
+        std::cout << "User with Id: " << user_id << " has been approved...\n";
     }
     else{
         std::cout << "User with given id does not exist...\n";
@@ -114,21 +100,21 @@ void Admin::approveUser(int Userid) {
     std::cout << "\n";
 }
 
-void Admin::deleteUser(int Userid) {
+void Admin::deleteUser(int user_id) {
     std::cout << "\n";
-    if(checkUser(Userid)){
-        if(getApproveStatus(Userid)){
-            this->approvedUsers.erase(Userid);
+    if(checkUser(user_id)){
+        if(getApproveStatus(user_id)){
+            this->approved_users.erase(user_id);
         }
-        auto deleteUser = this->Users.begin();
-        for(auto &user: this->Users){
-            if(user->get_Userid() == Userid){
+        auto delete_user = this->users.begin();
+        for(auto &user: this->users){
+            if(user->getUserId() == user_id){
                 break;
             }
-            ++deleteUser;
+            ++delete_user;
         }
-        this->Users.erase(deleteUser);
-        std::cout << "User with Id:" << Userid << " has been deleted along with tasks assigned...\n";
+        this->users.erase(delete_user);
+        std::cout << "User with Id:" << user_id << " has been deleted along with tasks assigned...\n";
     }
     else{
         std::cout << "User with given id does not exist...\n";
@@ -136,18 +122,19 @@ void Admin::deleteUser(int Userid) {
     std::cout << "\n";
 }
 
-void Admin::createTask(int Taskid, const std::string& title, const std::string& description, int Userid) {
+// Task setter methods
+void Admin::createTask(int task_id, const std::string& title, const std::string& description, int user_id) {
     std::cout << "\n";
-    if(checkUser(Userid) && getApproveStatus(Userid)){
-        for(auto &user: this->Users){
-            if(user->get_Userid() == Userid){
-                Taskptr task = std::make_shared<Task>(Taskid, title, description);
+    if(checkUser(user_id) && getApproveStatus(user_id)){
+        for(auto &user: this->users){
+            if(user->getUserId() == user_id){
+                Taskptr task = std::make_shared<Task>(task_id, title, description);
                 user->addTask(task);
                 break;
             }
         }
     }
-    else if(checkUser(Userid)){
+    else if(checkUser(user_id)){
         std::cout << "Cannot add task because User has not been approved ...\n";
     }
     else{
@@ -156,54 +143,55 @@ void Admin::createTask(int Taskid, const std::string& title, const std::string& 
     std::cout << "\n";
 }
 
-void Admin::deleteTask(int Taskid) {
+void Admin::deleteTask(int task_id) {
     std::cout << "\n";
-    bool taskNotFound = true;
-    for(auto &user: this->Users){
-        if(user->checkTask(Taskid)){
-            taskNotFound = false;
-            user->deleteTask(Taskid);
+    bool task_not_found = true;
+    for(auto &user: this->users){
+        if(user->checkTask(task_id)){
+            task_not_found = false;
+            user->deleteTask(task_id);
             break;
         }
     }
-    if(taskNotFound){
+    if(task_not_found){
         std::cout << "Task does not exist, Please enter correct task Id" << "\n";
     }
     std::cout << "\n";
 }
 
-void Admin::taskAdminStatusUpdate(int Taskid, bool Status) {
+void Admin::taskAdminStatusUpdate(int task_id, bool status) {
     std::cout << "\n";
-    bool taskNotFound = true;
-    for(auto &user: this->Users){
-        if(user->checkTask(Taskid)){
-            taskNotFound = false;
-            user->taskStatusUpdate(Taskid, Status);
+    bool task_not_found = true;
+    for(auto &user: this->users){
+        if(user->checkTask(task_id)){
+            task_not_found = false;
+            user->taskStatusUpdate(task_id, status);
             break;
         }
     }
-    if(taskNotFound){
+    if(task_not_found){
         std::cout << "Task does not exist, Please enter correct task Id" << "\n";
     }
     std::cout << "\n";
 }
 
-void Admin::reassignTask(int Taskid, int toUserid) {
+void Admin::reassignTask(int task_id, int reassign_to_user_id) {
     std::cout << "\n";
-    if(checkUser(toUserid) && getApproveStatus(toUserid)){
-        bool taskNotFound = true;
+    if(checkUser(reassign_to_user_id) && getApproveStatus(reassign_to_user_id)){
+        bool task_not_found = true;
         Taskptr task;
-        for(auto &user: this->Users){
-            if(user->checkTask(Taskid)){
-                taskNotFound = false;
-                task = user->getTaskbyId(Taskid);
-                user->deleteTask(Taskid);
+        for(auto &user: this->users){
+            if(user->checkTask(task_id)){
+                task_not_found = false;
+                task = user->getTaskById(task_id);
+                user->deleteTask(task_id);
                 break;
             }
         }
-        if(!taskNotFound){
-            for(auto &user: this->Users){
-                if(user->get_Userid() == toUserid){
+
+        if(!task_not_found){
+            for(auto &user: this->users){
+                if(user->getUserId() == reassign_to_user_id){
                     user->addTask(task);
                     break;
                 }
@@ -213,7 +201,7 @@ void Admin::reassignTask(int Taskid, int toUserid) {
             std::cout << "Task does not exist, Please enter correct task Id" << "\n";
         }
     }
-    else if(checkUser(toUserid)){
+    else if(checkUser(reassign_to_user_id)){
         std::cout << "Cannot reassign task because User has not been approved ...\n";
     }
     else{
@@ -222,26 +210,26 @@ void Admin::reassignTask(int Taskid, int toUserid) {
     std::cout << "\n";
 }
 
-// Display Methods
-void Admin::displayNotification() {
+// Display user methods 
+void Admin::displayNotifications() {
     std::cout << "\n";
     std::cout << "Collecting if any users are yet to be approved...\n";
-    int UnapprovedUsercount = getUnapprovedUsers();
-    if(UnapprovedUsercount == 0){
+    int unapproved_users_count = getUnapprovedUsers();
+    if(unapproved_users_count == 0){
         std::cout << "No users are yet to be approved...\n";
     }
     else{
-        std::cout << "You have " << UnapprovedUsercount << " users who are yet to be approved...\n";
+        std::cout << "You have " << unapproved_users_count << " users who are yet to be approved...\n";
     }
     std::cout << "\n";
 }
 
 void Admin::displayUnapprovedUsers(){
     std::cout << "\n";
-    int UnapprovedUsercount = getUnapprovedUsers();
-    if(UnapprovedUsercount > 0){
-        for(auto &user: this->Users){
-            if(!getApproveStatus(user->get_Userid())){
+    int unapproved_users_count = getUnapprovedUsers();
+    if(unapproved_users_count > 0){
+        for(auto &user: this->users){
+            if(!getApproveStatus(user->getUserId())){
                 user->displayUser();
             }
         }
@@ -253,81 +241,83 @@ void Admin::displayUnapprovedUsers(){
 
 void Admin::displayUsers(){
     std::cout << "\n";
-    int numUsers = (int)this->Users.size();
-    if(numUsers > 0){
-        for(auto &user: this->Users){
+    int no_of_users = (int)this->users.size();
+    if(no_of_users > 0){
+        for(auto &user: this->users){
             user->displayUser();
         }
     }
     else{
-
+        std::cout << "No Users are currently present...\n";
     }
     std::cout << "\n";
 }
 
+// Display task methods
 void Admin::displayAllTasks(){
     std::cout << "\n";
-    bool taskNotFound = true;
-    for(auto &user: this->Users){
-        std::vector<int> Taskids = user->getUsertaskIds();
-        for(auto &id: Taskids){
-            taskNotFound = false;
-            Taskptr task = user->getTaskbyId(id);
-            std::cout << "User Id: " << user->get_Userid() << "\n";
-            task->printTask();
+    bool task_not_found = true;
+    for(auto &user: this->users){
+        std::vector<int> task_ids = user->getUserAllTaskIds();
+        for(auto &id: task_ids){
+            task_not_found = false;
+            Taskptr task = user->getTaskById(id);
+            std::cout << "User Id: " << user->getUserId() << "\n";
+            task->displayTask();
         }
     }
 
-    if(taskNotFound){
+    if(task_not_found){
         std::cout << "No Tasks are assigned right now...\n";
     }
     std::cout << "\n";
 }
 
-void Admin::displayUserTasks(int Userid){
+void Admin::displayUserTasks(int user_id){
     std::cout << "\n";
-    bool taskNotFound = true;
-    for(auto &user: this->Users){
-        if(user->get_Userid() == Userid){
-            std::vector<int> Taskids = user->getUsertaskIds();
-            for(auto &id: Taskids){
-                taskNotFound = false;
-                Taskptr task = user->getTaskbyId(id);
-                std::cout << "User Id: " << user->get_Userid() << "\n";
-                task->printTask();
+    bool task_not_found = true;
+    for(auto &user: this->users){
+        if(user->getUserId() == user_id){
+            std::vector<int> task_ids = user->getUserAllTaskIds();
+            for(auto &id: task_ids){
+                task_not_found = false;
+                Taskptr task = user->getTaskById(id);
+                std::cout << "User Id: " << user->getUserId() << "\n";
+                task->displayTask();
             }
             break;
         }
     }
 
-    if(taskNotFound){
+    if(task_not_found){
         std::cout << "No Tasks are assigned right now...\n";
     }
     std::cout << "\n";
 }
 
-void Admin::displayTaskbyId(int Taskid){
+void Admin::displayTaskById(int task_id){
     std::cout << "\n";
-    bool taskNotFound = true;
-    for(auto &user: this->Users){
-        if(user->checkTask(Taskid)){
-            taskNotFound = false;
-            Taskptr task = user->getTaskbyId(Taskid);
-            std::cout << "User Id: " << user->get_Userid() << "\n";
-            task->printTask();
+    bool task_not_found = true;
+    for(auto &user: this->users){
+        if(user->checkTask(task_id)){
+            task_not_found = false;
+            Taskptr task = user->getTaskById(task_id);
+            std::cout << "User Id: " << user->getUserId() << "\n";
+            task->displayTask();
             break;
         }
     }
 
-    if(taskNotFound){
+    if(task_not_found){
         std::cout << "Task does not exist, Please enter correct task Id\n";
     }
     std::cout << "\n";
 }
 
+// Display Admin Methods
 void Admin::displayAdmin(){
     std::cout << "\n";
-    std::cout << "Admin Id: " << this->get_Adminid() << "\n";
-    std::cout << "Username: " << this->get_Username() << "\n";
+    std::cout << "Admin Id: " << this->getAdminId() << "\n";
+    std::cout << "username: " << this->getUsername() << "\n";
     std::cout << "\n";
 }

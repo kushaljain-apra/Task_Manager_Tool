@@ -4,50 +4,49 @@
 // Constructors
 TaskManager::TaskManager() {
     Adminptr admin = std::make_shared<Admin>(1, "admin", "admin");
-    this->superAdmin = admin;
+    this->super_admin = admin;
 }
 
 // Getters
-int TaskManager::get_superAdminid() {
-    return superAdmin->get_Adminid();
+int TaskManager::getSuperAdminId() {
+    return super_admin->getAdminId();
 }
 
-std::string TaskManager::get_superAdminUsername() {
-    return superAdmin->get_Username();
+std::string TaskManager::getSuperAdminUsername() {
+    return super_admin->getUsername();
 }
 
-std::string TaskManager::get_superAdminPassword() {
-    return superAdmin->get_Password();
+std::string TaskManager::getSuperAdminPassword() {
+    return super_admin->getPassword();
 }
-
-// Setters
 
 // Display Methods
-void TaskManager::Welcome(){
+void TaskManager::welcome(){
     std::cout << "\t\t\t******************************************************************\n";
-    std::cout << "\t\t\t                    Welcome to Task Manager !!!\n";
+    std::cout << "\t\t\t                    welcome to Task Manager !!!\n";
     std::cout << "\t\t\t******************************************************************\n\n\n";
 }
-void TaskManager::HomePage() {
+
+void TaskManager::homePage() {
     while(true){
-        Welcome();
+        welcome();
         std::cout << "Note: Please use characters before the colon for typing using any commands\n\n";
         std::cout << "A: Admin Login\n";
         std::cout << "U: User Login\n";
         std::cout << "N: New User? Register here\n";
         std::cout << "exit: Exit Task Manager\n";
 
-        std::string command = validate->ValidreadString("Enter a Command: ", "Please enter a command...\n");
+        std::string command = validator->validReadString("Enter a Command: ", "Please enter a command...\n");
         std::cout << "\n";
 
         if(command == "A"){
-            AdminLoginPage();
+            adminLoginPage();
         }
         else if(command == "U"){
-            UserLoginPage();
+            userLoginPage();
         }
         else if(command == "N"){
-            RegisterationPage();
+            registerationPage();
         }
         else if(command == "exit"){
             break ;
@@ -58,11 +57,11 @@ void TaskManager::HomePage() {
     }
 }
 
-void TaskManager::RegisterationPage() {
+void TaskManager::registerationPage() {
     std::cout << "**************User Registration Page**************\n\n";
-    int Userid = validate->ValidreadInteger("Enter User Id: ", "Please enter a valid integer...\n");
-    std::string Username = validate->ValidreadString("Enter Username: ", "Please enter a username...\n");
-    std::string Password = validate->ValidreadString("Enter Password: ", "Please enter a password...\n");
+    int user_id = validator->validReadInteger("Enter User Id: ", "Please enter a valid integer...\n");
+    std::string username = validator->validReadString("Enter username: ", "Please enter a username...\n");
+    std::string password = validator->validReadString("Enter password: ", "Please enter a password...\n");
 
     std::cout << "\n";
 
@@ -71,15 +70,15 @@ void TaskManager::RegisterationPage() {
     std::cout << "B: Go Back\n";
 
     while(true){
-        std::string command = validate->ValidreadString("Enter a Command: ", "Please enter a command...\n");
+        std::string command = validator->validReadString("Enter a Command: ", "Please enter a command...\n");
         std::cout << "\n";
 
         if(command == "F"){
-            if(!superAdmin->checkUser(Userid)){
+            if(!super_admin->checkUser(user_id)){
                 std::cout << "User Registration Confirmed...\n";
                 std::cout << "Redirecting to Home...\n";
             }
-            superAdmin->createUser(Userid, Username, Password);
+            super_admin->createUser(user_id, username, password);
             break;
         }
         else if(command == "C"){
@@ -98,19 +97,19 @@ void TaskManager::RegisterationPage() {
     }
 }
 
-void TaskManager::AdminLoginPage() {
+void TaskManager::adminLoginPage() {
     while(true){
         std::cout << "**************Admin Login Page**************\n\n";
-        int Adminid = validate->ValidreadInteger("Enter Adminid: ", "Please enter a valid integer...\n");
-        std::string Password = validate->ValidreadString("Enter Password: ", "Please enter a password...\n");
+        int admin_id = validator->validReadInteger("Enter admin_id: ", "Please enter a valid integer...\n");
+        std::string password = validator->validReadString("Enter password: ", "Please enter a password...\n");
 
         std::cout << "\n";
 
-        if(superAdmin->get_Adminid() == Adminid && superAdmin->get_Password() == Password){
+        if(super_admin->login(admin_id, password)){
             std::cout << "Access Granted...\n\n\n";
             std::cout << "**************Admin Page**************\n\n";
-            superAdmin->login(Adminid, Password);
-            AdminPage();
+            super_admin->displayNotifications();
+            adminPage();
             break;
         }
         else{
@@ -119,17 +118,17 @@ void TaskManager::AdminLoginPage() {
     }
 }
 
-void TaskManager::AdminPage() {
+void TaskManager::adminPage() {
     while(true){
-        if(superAdmin->getUnapprovedUsers() > 0){
-            std::cout << "S: Show Unapproved Users\n";
+        if(super_admin->getUnapprovedUsers() > 0){
+            std::cout << "S: Show Unapproved users\n";
             std::cout << "D: Dismiss\n";
 
-            std::string command = validate->ValidreadString("Enter a Command: ", "Please enter a command...\n");
+            std::string command = validator->validReadString("Enter a Command: ", "Please enter a command...\n");
             std::cout << "\n";
 
             if(command == "S"){
-                superAdmin->displayUnapprovedUsers();
+                super_admin->displayUnapprovedUsers();
                 break;
             }
             else if(command == "D"){
@@ -147,7 +146,7 @@ void TaskManager::AdminPage() {
     while(true){
         std::cout << "1: Create Task\n";
         std::cout << "2: Delete Task\n";
-        std::cout << "3: Update Task Status\n";
+        std::cout << "3: Update Task status\n";
         std::cout << "4: Reassign Task\n";
         std::cout << "5: Create User\n";
         std::cout << "6: Approve User\n";
@@ -155,77 +154,77 @@ void TaskManager::AdminPage() {
         std::cout << "8: Display All Tasks\n";
         std::cout << "9: Display Task by Id\n";
         std::cout << "10: Display Task by User\n";
-        std::cout << "11: Display Users\n";
-        std::cout << "12: Display Unapproved Users\n";
+        std::cout << "11: Display users\n";
+        std::cout << "12: Display Unapproved users\n";
         std::cout << "13: Display Admin Details\n";
         std::cout << "L: Logout\n";
 
         std::cout << "\n";
 
-        std::string command = validate->ValidreadString("Enter a command: ", "Please enter a command...\n");
+        std::string command = validator->validReadString("Enter a command: ", "Please enter a command...\n");
         std::cout << "\n";
 
         if(command == "1"){
-            int Taskid = validate->ValidreadInteger("Enter Task Id: ", "Please enter a valid Task Id...\n");
-            std::string Title = validate->ValidreadString("Enter Title: ", "Please enter a title...\n");
-            std::string Description = validate->ValidreadString("Enter Description: ", "Please enter a description...\n");
-            int Userid = validate->ValidreadInteger("Enter User Id: ", "Please enter a valid User Id...\n");
-            superAdmin->createTask(Taskid, Title, Description, Userid);
+            int task_id = validator->validReadInteger("Enter Task Id: ", "Please enter a valid Task Id...\n");
+            std::string title = validator->validReadString("Enter title: ", "Please enter a title...\n");
+            std::string description = validator->validReadString("Enter description: ", "Please enter a description...\n");
+            int user_id = validator->validReadInteger("Enter User Id: ", "Please enter a valid User Id...\n");
+            super_admin->createTask(task_id, title, description, user_id);
         }
         else if(command == "2"){
-            int Taskid = validate->ValidreadInteger("Enter Task Id: ", "Please enter a valid Task Id...\n");
-            superAdmin->deleteTask(Taskid);
+            int task_id = validator->validReadInteger("Enter Task Id: ", "Please enter a valid Task Id...\n");
+            super_admin->deleteTask(task_id);
         }
         else if(command == "3"){
-            int Taskid = validate->ValidreadInteger("Enter Task Id: ", "Please enter a valid Task Id...\n");
-            int Status = validate->ValidreadInteger("Enter Status (1 for complete OR 0 for incomplete): ", "Please enter a valid status...\n");
-            bool update;
-            if(Status == 0){
-                update = false;
+            int task_id = validator->validReadInteger("Enter Task Id: ", "Please enter a valid Task Id...\n");
+            int task_status = validator->validReadInteger("Enter status (1 for complete OR 0 for incomplete): ", "Please enter a valid status...\n");
+            bool updated_task_status;
+            if(task_status == 0){
+                updated_task_status = false;
             }
             else{
-                update = true;
+                updated_task_status = true;
             }
-            superAdmin->taskAdminStatusUpdate(Taskid, update);
+            super_admin->taskAdminStatusUpdate(task_id, updated_task_status);
         }
         else if(command == "4"){
-            int Taskid = validate->ValidreadInteger("Enter Task Id: ", "Please enter a valid Task Id...\n");
-            int Userid = validate->ValidreadInteger("Enter User Id: ", "Please enter a valid User Id...\n");
-            superAdmin->reassignTask(Taskid, Userid);
+            int task_id = validator->validReadInteger("Enter Task Id: ", "Please enter a valid Task Id...\n");
+            int user_id = validator->validReadInteger("Enter User Id: ", "Please enter a valid User Id...\n");
+            super_admin->reassignTask(task_id, user_id);
         }
         else if(command == "5"){
-            int Userid = validate->ValidreadInteger("Enter User Id: ", "Please enter a valid integer...\n");
-            std::string Username = validate->ValidreadString("Enter Username: ", "Please enter a username...\n");
-            std::string Password = validate->ValidreadString("Enter Password: ", "Please enter a password...\n");
-            superAdmin->createUser(Userid, Username, Password);
+            int user_id = validator->validReadInteger("Enter User Id: ", "Please enter a valid integer...\n");
+            std::string username = validator->validReadString("Enter username: ", "Please enter a username...\n");
+            std::string password = validator->validReadString("Enter password: ", "Please enter a password...\n");
+            super_admin->createUser(user_id, username, password);
         }
         else if(command == "6"){
-            int Userid = validate->ValidreadInteger("Enter User Id: ", "Please enter a valid integer...\n");
-            superAdmin->approveUser(Userid);
+            int user_id = validator->validReadInteger("Enter User Id: ", "Please enter a valid integer...\n");
+            super_admin->approveUser(user_id);
         }
         else if(command == "7"){
-            int Userid = validate->ValidreadInteger("Enter User Id: ", "Please enter a valid integer...\n");
-            superAdmin->deleteUser(Userid);
+            int user_id = validator->validReadInteger("Enter User Id: ", "Please enter a valid integer...\n");
+            super_admin->deleteUser(user_id);
         }
         else if(command == "8"){
-            superAdmin->displayAllTasks();
+            super_admin->displayAllTasks();
         }
         else if(command == "9"){
-            int Taskid = validate->ValidreadInteger("Enter Task Id: ", "Please enter a valid Task Id...\n");
-            superAdmin->displayTaskbyId(Taskid);
+            int task_id = validator->validReadInteger("Enter Task Id: ", "Please enter a valid Task Id...\n");
+            super_admin->displayTaskById(task_id);
         }
         else if(command == "10"){
-            int Userid = validate->ValidreadInteger("Enter User Id: ", "Please enter a valid integer...\n");
-            superAdmin->displayUserTasks(Userid);
+            int user_id = validator->validReadInteger("Enter User Id: ", "Please enter a valid integer...\n");
+            super_admin->displayUserTasks(user_id);
         }
         else if(command == "11"){
-            superAdmin->displayUsers();
+            super_admin->displayUsers();
         }
         else if(command == "12"){
-            superAdmin->displayUnapprovedUsers();
+            super_admin->displayUnapprovedUsers();
         }
         else if(command == "13"){
-            superAdmin->displayAdmin();
+            super_admin->displayAdmin();
         }
         else if(command == "L"){
             std::cout << "Logged out Successfully...\n";
@@ -237,27 +236,26 @@ void TaskManager::AdminPage() {
     }
 }
 
-void TaskManager::UserLoginPage() {
+void TaskManager::userLoginPage() {
     while(true){
         std::cout << "**************User Login Page**************\n\n";
-        int Userid = validate->ValidreadInteger("Enter Userid: ", "Please enter a valid integer...\n");
-        std::string Password = validate->ValidreadString("Enter Password: ", "Please enter a password...\n");
+        int user_id = validator->validReadInteger("Enter user_id: ", "Please enter a valid integer...\n");
+        std::string password = validator->validReadString("Enter password: ", "Please enter a password...\n");
 
         std::cout << "\n";
 
-        if(superAdmin->checkUser(Userid)){
-            Userptr& user = superAdmin->getUserbyId(Userid);
-            if(user->get_Password() == Password){
-                if(superAdmin->getApproveStatus(Userid)){
-                    std::cout << "Access Granted...\n\n\n";
-                    std::cout << "**************User Page**************\n\n";
-                    user->login(Userid, Password);
-                    UserPage(user);
-                    break;
-                }else{
-                    std::cout << "You cannot login, check with admin if your Id is approved or not...\n";
-                    break;
-                }
+        if(super_admin->checkUser(user_id)){
+            Userptr& user = super_admin->getUserById(user_id);
+            if(user->login(user_id, password) && super_admin->getApproveStatus(user_id)){
+                std::cout << "Access Granted...\n\n\n";
+                std::cout << "**************User Page**************\n\n";
+                user->displayNotifications();
+                userPage(user);
+                break;
+            }
+            else if(user->login(user_id, password) && !super_admin->getApproveStatus(user_id)){
+                std::cout << "You cannot login, check with admin if your Id is approved or not...\n";
+                break;
             }
             else{
                 std::cout << "Your username or password is incorrect, please login with correct username or password... \n";
@@ -269,13 +267,13 @@ void TaskManager::UserLoginPage() {
     }
 }
 
-void TaskManager::UserPage(Userptr& user) {
+void TaskManager::userPage(Userptr& user) {
     while(true){
         if(user->getNewTasks() > 0){
             std::cout << "S: Show New Tasks\n";
             std::cout << "D: Dismiss\n";
 
-            std::string command = validate->ValidreadString("Enter a Command: ", "Please enter a command...\n");
+            std::string command = validator->validReadString("Enter a Command: ", "Please enter a command...\n");
             std::cout << "\n";
 
             if(command == "S"){
@@ -295,7 +293,7 @@ void TaskManager::UserPage(Userptr& user) {
     }
 
     while(true){
-        std::cout << "1: Update Task Status\n";
+        std::cout << "1: Update Task status\n";
         std::cout << "2: Display All Tasks\n";
         std::cout << "3: Display New Tasks\n";
         std::cout << "4: Display Task by Id\n";
@@ -304,20 +302,20 @@ void TaskManager::UserPage(Userptr& user) {
 
         std::cout << "\n";
 
-        std::string command = validate->ValidreadString("Enter a command: ", "Please enter a command...\n");
+        std::string command = validator->validReadString("Enter a command: ", "Please enter a command...\n");
         std::cout << "\n";
 
         if(command == "1"){
-            int Taskid = validate->ValidreadInteger("Enter Task Id: ", "Please enter a valid Task Id...\n");
-            int Status = validate->ValidreadInteger("Enter Status (1 for complete OR 0 for incomplete): ", "Please enter a valid status...\n");
-            bool update;
-            if(Status == 0){
-                update = false;
+            int task_id = validator->validReadInteger("Enter Task Id: ", "Please enter a valid Task Id...\n");
+            int task_status = validator->validReadInteger("Enter status (1 for complete OR 0 for incomplete): ", "Please enter a valid status...\n");
+            bool updated_task_status;
+            if(task_status == 0){
+                updated_task_status = false;
             }
             else{
-                update = true;
+                updated_task_status = true;
             }
-            user->taskStatusUpdate(Taskid, update);
+            user->taskStatusUpdate(task_id, updated_task_status);
         }
         else if(command == "2"){
             user->displayAllUserTasks();
@@ -326,8 +324,8 @@ void TaskManager::UserPage(Userptr& user) {
             user->displayNewTasks();
         }
         else if(command == "4"){
-            int Taskid = validate->ValidreadInteger("Enter Task Id: ", "Please enter a valid Task Id...\n");
-            user->displayTaskbyId(Taskid);
+            int task_id = validator->validReadInteger("Enter Task Id: ", "Please enter a valid Task Id...\n");
+            user->displayTaskById(task_id);
         }
         else if(command == "5"){
             user->displayUser();

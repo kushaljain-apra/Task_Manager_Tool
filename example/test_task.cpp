@@ -3,11 +3,11 @@
 
 int main(){
     Taskptr mytask = std::make_shared<Task>(1, "Setup vcpkg", "Refer to documentation");
-    mytask->printTask();
+    mytask->displayTask();
     std::cout << "Changing task status and read status to completed...\n";
-    mytask->setTaskstatus(true);
+    mytask->getTaskReadStatus();
     mytask->setTaskReadStatus(true);
-    mytask->printTask();
+    mytask->displayTask();
     
     return 0;
 }

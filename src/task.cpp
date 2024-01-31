@@ -2,50 +2,50 @@
 #include "task.h"
 
 // Constructor
-Task::Task(int Taskid, const std::string& Title, const std::string& Description){
-    this->Taskid = Taskid;
-    this->Title = Title;
-    this->Description = Description;
-    this->TaskStatus = false;
-    this->TaskReadStatus = false;
+Task::Task(int task_id, const std::string& title, const std::string& description){
+    this->task_id = task_id;
+    this->title = title;
+    this->description = description;
+    this->task_status = false;
+    this->task_read_status = false;
 }
 
 // Getters
-int Task::get_id() const{
-    return Taskid;
+int Task::getTaskId() const{
+    return task_id;
 }
 
-std::string Task::get_title() const {
-    return Title;
+std::string Task::getTitle() const {
+    return title;
 }
 
-std::string Task::get_description() const {
-    return Description;
+std::string Task::getDescription() const {
+    return description;
 }
 
-bool Task::getTaskstatus() const{
-    return TaskStatus;
+bool Task::getTaskStatus() const{
+    return task_status;
 }
 
 bool Task::getTaskReadStatus() const {
-    return TaskReadStatus;
+    return task_read_status;
 }
 
 // Setters
-void Task::setTaskstatus(bool Status){
-    this->TaskStatus = Status;
+void Task::setTaskStatus(bool task_status){
+    this->task_status = task_status;
 }
 
-void Task::setTaskReadStatus(bool ReadStatus){
-    this->TaskReadStatus = ReadStatus;
+void Task::setTaskReadStatus(bool task_read_status){
+    this->task_read_status = task_read_status;
 }
 
-// Display Methods
-void Task::printTask() const{
+// Display Method
+void Task::displayTask() const{
     std::cout << "\n";
-    std::cout << "Task Id: " << get_id() << "\n";
-    std::cout << "Title: " << get_title() << "\n";
-    std::cout << "Description: " << get_description() << "\n";
-    std::cout << "Task Status: " << getTaskstatus() << "\n";
+    std::cout << "Task Id: " << getTaskId() << "\n";
+    std::cout << "title: " << getTitle() << "\n";
+    std::cout << "description: " << getDescription() << "\n";
+    std::cout << "Task status: " << getTaskStatus() << "\n";
     std::cout << "\n";
 }

@@ -3,6 +3,6 @@
 
 int main(){
     TaskManagerptr taskmanager = std::make_shared<TaskManager>();
-    taskmanager->HomePage();
+    taskmanager->homePage();
     return 0;
 }
