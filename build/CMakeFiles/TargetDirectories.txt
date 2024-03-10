@@ -1,0 +1,14 @@
+C:/Users/developer/Task_Manager_Tool/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/developer/Task_Manager_Tool/build/CMakeFiles/ZERO_CHECK.dir
+C:/Users/developer/Task_Manager_Tool/build/src/CMakeFiles/printhello.dir
+C:/Users/developer/Task_Manager_Tool/build/src/CMakeFiles/task.dir
+C:/Users/developer/Task_Manager_Tool/build/src/CMakeFiles/user.dir
+C:/Users/developer/Task_Manager_Tool/build/src/CMakeFiles/admin.dir
+C:/Users/developer/Task_Manager_Tool/build/src/CMakeFiles/taskmanager.dir
+C:/Users/developer/Task_Manager_Tool/build/src/CMakeFiles/inputvalidator.dir
+C:/Users/developer/Task_Manager_Tool/build/main/CMakeFiles/main.dir
+C:/Users/developer/Task_Manager_Tool/build/example/CMakeFiles/helloworld.dir
+C:/Users/developer/Task_Manager_Tool/build/example/CMakeFiles/test_task.dir
+C:/Users/developer/Task_Manager_Tool/build/example/CMakeFiles/test_user.dir
+C:/Users/developer/Task_Manager_Tool/build/example/CMakeFiles/test_admin.dir
+C:/Users/developer/Task_Manager_Tool/build/example/CMakeFiles/test_taskmanager.dir

@@ -1,0 +1,12 @@
+{
+    "version": 3,
+    "configurePresets": [
+        {
+            "name": "default",
+            "binaryDir": "${sourceDir}/build",
+            "cacheVariables": {
+                "CMAKE_TOOLCHAIN_FILE": "C:/Users/developer/Task_Manager_Tool/vcpkg/scripts/buildsystems/vcpkg.cmake"
+            }
+        }
+    ]
+}

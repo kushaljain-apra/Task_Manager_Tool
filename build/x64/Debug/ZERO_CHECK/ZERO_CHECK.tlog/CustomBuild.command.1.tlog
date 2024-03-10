@@ -1,0 +1,10 @@
+^C:\USERS\DEVELOPER\TASK_MANAGER_TOOL\BUILD\CMAKEFILES\2F3ED3DA0935644FE4C7770645C0961C\GENERATE.STAMP.RULE
+setlocal
+C:\Python312\Lib\site-packages\cmake\data\bin\cmake.exe -SC:/Users/developer/Task_Manager_Tool -BC:/Users/developer/Task_Manager_Tool/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/developer/Task_Manager_Tool/build/HelloWorld.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
