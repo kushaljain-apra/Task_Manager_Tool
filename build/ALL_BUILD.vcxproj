@@ -1,0 +1,228 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ResolveNugetPackages>false</ResolveNugetPackages>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{C7721DCE-BFBB-390D-AA82-0D1A880779A1}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.19041.0</WindowsTargetPlatformVersion>
+    <Platform>x64</Platform>
+    <ProjectName>ALL_BUILD</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\developer\Task_Manager_Tool\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Users/developer/Task_Manager_Tool/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+C:\Python312\Lib\site-packages\cmake\data\bin\cmake.exe -SC:/Users/developer/Task_Manager_Tool -BC:/Users/developer/Task_Manager_Tool/build --check-stamp-file C:/Users/developer/Task_Manager_Tool/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Python312\Lib\site-packages\cmake\data\share\cmake-3.28\Modules\CMakeCInformation.cmake;C:\Python312\Lib\site-packages\cmake\data\share\cmake-3.28\Modules\CMakeCXXInformation.cmake;C:\Python312\Lib\site-packages\cmake\data\share\cmake-3.28\Modules\CMakeCommonLanguageInclude.cmake;C:\Python312\Lib\site-packages\cmake\data\share\cmake-3.28\Modules\CMakeDependentOption.cmake;C:\Python312\Lib\site-packages\cmake\data\share\cmake-3.28\Modules\CMakeGenericSystem.cmake;C:\Python312\Lib\site-packages\cmake\data\share\cmake-3.28\Modules\CMakeInitializeConfigs.cmake;C:\Python312\Lib\site-packages\cmake\data\share\cmake-3.28\Modules\CMakeLanguageInformation.cmake;C:\Python312\Lib\site-packages\cmake\data\share\cmake-3.28\Modules\CMakeRCInformation.cmake;C:\Python312\Lib\site-packages\cmake\data\share\cmake-3.28\Modules\CMakeSystemSpecificInformation.cmake;C:\Python312\Lib\site-packages\cmake\data\share\cmake-3.28\Modules\CMakeSystemSpecificInitialize.cmake;C:\Python312\Lib\site-packages\cmake\data\share\cmake-3.28\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Python312\Lib\site-packages\cmake\data\share\cmake-3.28\Modules\Compiler\MSVC-C.cmake;C:\Python312\Lib\site-packages\cmake\data\share\cmake-3.28\Modules\Compiler\MSVC-CXX.cmake;C:\Python312\Lib\site-packages\cmake\data\share\cmake-3.28\Modules\Compiler\MSVC.cmake;C:\Python312\Lib\site-packages\cmake\data\share\cmake-3.28\Modules\Platform\Windows-Initialize.cmake;C:\Python312\Lib\site-packages\cmake\data\share\cmake-3.28\Modules\Platform\Windows-MSVC-C.cmake;C:\Python312\Lib\site-packages\cmake\data\share\cmake-3.28\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Python312\Lib\site-packages\cmake\data\share\cmake-3.28\Modules\Platform\Windows-MSVC.cmake;C:\Python312\Lib\site-packages\cmake\data\share\cmake-3.28\Modules\Platform\Windows.cmake;C:\Python312\Lib\site-packages\cmake\data\share\cmake-3.28\Modules\Platform\WindowsPaths.cmake;C:\Users\developer\Task_Manager_Tool\build\CMakeFiles\3.28.1\CMakeCCompiler.cmake;C:\Users\developer\Task_Manager_Tool\build\CMakeFiles\3.28.1\CMakeCXXCompiler.cmake;C:\Users\developer\Task_Manager_Tool\build\CMakeFiles\3.28.1\CMakeRCCompiler.cmake;C:\Users\developer\Task_Manager_Tool\build\CMakeFiles\3.28.1\CMakeSystem.cmake;C:\Users\developer\Task_Manager_Tool\vcpkg-configuration.json;C:\Users\developer\Task_Manager_Tool\vcpkg.json;C:\Users\developer\Task_Manager_Tool\vcpkg\scripts\buildsystems\vcpkg.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\developer\Task_Manager_Tool\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/Users/developer/Task_Manager_Tool/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+C:\Python312\Lib\site-packages\cmake\data\bin\cmake.exe -SC:/Users/developer/Task_Manager_Tool -BC:/Users/developer/Task_Manager_Tool/build --check-stamp-file C:/Users/developer/Task_Manager_Tool/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Python312\Lib\site-packages\cmake\data\share\cmake-3.28\Modules\CMakeCInformation.cmake;C:\Python312\Lib\site-packages\cmake\data\share\cmake-3.28\Modules\CMakeCXXInformation.cmake;C:\Python312\Lib\site-packages\cmake\data\share\cmake-3.28\Modules\CMakeCommonLanguageInclude.cmake;C:\Python312\Lib\site-packages\cmake\data\share\cmake-3.28\Modules\CMakeDependentOption.cmake;C:\Python312\Lib\site-packages\cmake\data\share\cmake-3.28\Modules\CMakeGenericSystem.cmake;C:\Python312\Lib\site-packages\cmake\data\share\cmake-3.28\Modules\CMakeInitializeConfigs.cmake;C:\Python312\Lib\site-packages\cmake\data\share\cmake-3.28\Modules\CMakeLanguageInformation.cmake;C:\Python312\Lib\site-packages\cmake\data\share\cmake-3.28\Modules\CMakeRCInformation.cmake;C:\Python312\Lib\site-packages\cmake\data\share\cmake-3.28\Modules\CMakeSystemSpecificInformation.cmake;C:\Python312\Lib\site-packages\cmake\data\share\cmake-3.28\Modules\CMakeSystemSpecificInitialize.cmake;C:\Python312\Lib\site-packages\cmake\data\share\cmake-3.28\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Python312\Lib\site-packages\cmake\data\share\cmake-3.28\Modules\Compiler\MSVC-C.cmake;C:\Python312\Lib\site-packages\cmake\data\share\cmake-3.28\Modules\Compiler\MSVC-CXX.cmake;C:\Python312\Lib\site-packages\cmake\data\share\cmake-3.28\Modules\Compiler\MSVC.cmake;C:\Python312\Lib\site-packages\cmake\data\share\cmake-3.28\Modules\Platform\Windows-Initialize.cmake;C:\Python312\Lib\site-packages\cmake\data\share\cmake-3.28\Modules\Platform\Windows-MSVC-C.cmake;C:\Python312\Lib\site-packages\cmake\data\share\cmake-3.28\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Python312\Lib\site-packages\cmake\data\share\cmake-3.28\Modules\Platform\Windows-MSVC.cmake;C:\Python312\Lib\site-packages\cmake\data\share\cmake-3.28\Modules\Platform\Windows.cmake;C:\Python312\Lib\site-packages\cmake\data\share\cmake-3.28\Modules\Platform\WindowsPaths.cmake;C:\Users\developer\Task_Manager_Tool\build\CMakeFiles\3.28.1\CMakeCCompiler.cmake;C:\Users\developer\Task_Manager_Tool\build\CMakeFiles\3.28.1\CMakeCXXCompiler.cmake;C:\Users\developer\Task_Manager_Tool\build\CMakeFiles\3.28.1\CMakeRCCompiler.cmake;C:\Users\developer\Task_Manager_Tool\build\CMakeFiles\3.28.1\CMakeSystem.cmake;C:\Users\developer\Task_Manager_Tool\vcpkg-configuration.json;C:\Users\developer\Task_Manager_Tool\vcpkg.json;C:\Users\developer\Task_Manager_Tool\vcpkg\scripts\buildsystems\vcpkg.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\developer\Task_Manager_Tool\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/Users/developer/Task_Manager_Tool/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+C:\Python312\Lib\site-packages\cmake\data\bin\cmake.exe -SC:/Users/developer/Task_Manager_Tool -BC:/Users/developer/Task_Manager_Tool/build --check-stamp-file C:/Users/developer/Task_Manager_Tool/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Python312\Lib\site-packages\cmake\data\share\cmake-3.28\Modules\CMakeCInformation.cmake;C:\Python312\Lib\site-packages\cmake\data\share\cmake-3.28\Modules\CMakeCXXInformation.cmake;C:\Python312\Lib\site-packages\cmake\data\share\cmake-3.28\Modules\CMakeCommonLanguageInclude.cmake;C:\Python312\Lib\site-packages\cmake\data\share\cmake-3.28\Modules\CMakeDependentOption.cmake;C:\Python312\Lib\site-packages\cmake\data\share\cmake-3.28\Modules\CMakeGenericSystem.cmake;C:\Python312\Lib\site-packages\cmake\data\share\cmake-3.28\Modules\CMakeInitializeConfigs.cmake;C:\Python312\Lib\site-packages\cmake\data\share\cmake-3.28\Modules\CMakeLanguageInformation.cmake;C:\Python312\Lib\site-packages\cmake\data\share\cmake-3.28\Modules\CMakeRCInformation.cmake;C:\Python312\Lib\site-packages\cmake\data\share\cmake-3.28\Modules\CMakeSystemSpecificInformation.cmake;C:\Python312\Lib\site-packages\cmake\data\share\cmake-3.28\Modules\CMakeSystemSpecificInitialize.cmake;C:\Python312\Lib\site-packages\cmake\data\share\cmake-3.28\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Python312\Lib\site-packages\cmake\data\share\cmake-3.28\Modules\Compiler\MSVC-C.cmake;C:\Python312\Lib\site-packages\cmake\data\share\cmake-3.28\Modules\Compiler\MSVC-CXX.cmake;C:\Python312\Lib\site-packages\cmake\data\share\cmake-3.28\Modules\Compiler\MSVC.cmake;C:\Python312\Lib\site-packages\cmake\data\share\cmake-3.28\Modules\Platform\Windows-Initialize.cmake;C:\Python312\Lib\site-packages\cmake\data\share\cmake-3.28\Modules\Platform\Windows-MSVC-C.cmake;C:\Python312\Lib\site-packages\cmake\data\share\cmake-3.28\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Python312\Lib\site-packages\cmake\data\share\cmake-3.28\Modules\Platform\Windows-MSVC.cmake;C:\Python312\Lib\site-packages\cmake\data\share\cmake-3.28\Modules\Platform\Windows.cmake;C:\Python312\Lib\site-packages\cmake\data\share\cmake-3.28\Modules\Platform\WindowsPaths.cmake;C:\Users\developer\Task_Manager_Tool\build\CMakeFiles\3.28.1\CMakeCCompiler.cmake;C:\Users\developer\Task_Manager_Tool\build\CMakeFiles\3.28.1\CMakeCXXCompiler.cmake;C:\Users\developer\Task_Manager_Tool\build\CMakeFiles\3.28.1\CMakeRCCompiler.cmake;C:\Users\developer\Task_Manager_Tool\build\CMakeFiles\3.28.1\CMakeSystem.cmake;C:\Users\developer\Task_Manager_Tool\vcpkg-configuration.json;C:\Users\developer\Task_Manager_Tool\vcpkg.json;C:\Users\developer\Task_Manager_Tool\vcpkg\scripts\buildsystems\vcpkg.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\developer\Task_Manager_Tool\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/Users/developer/Task_Manager_Tool/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+C:\Python312\Lib\site-packages\cmake\data\bin\cmake.exe -SC:/Users/developer/Task_Manager_Tool -BC:/Users/developer/Task_Manager_Tool/build --check-stamp-file C:/Users/developer/Task_Manager_Tool/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Python312\Lib\site-packages\cmake\data\share\cmake-3.28\Modules\CMakeCInformation.cmake;C:\Python312\Lib\site-packages\cmake\data\share\cmake-3.28\Modules\CMakeCXXInformation.cmake;C:\Python312\Lib\site-packages\cmake\data\share\cmake-3.28\Modules\CMakeCommonLanguageInclude.cmake;C:\Python312\Lib\site-packages\cmake\data\share\cmake-3.28\Modules\CMakeDependentOption.cmake;C:\Python312\Lib\site-packages\cmake\data\share\cmake-3.28\Modules\CMakeGenericSystem.cmake;C:\Python312\Lib\site-packages\cmake\data\share\cmake-3.28\Modules\CMakeInitializeConfigs.cmake;C:\Python312\Lib\site-packages\cmake\data\share\cmake-3.28\Modules\CMakeLanguageInformation.cmake;C:\Python312\Lib\site-packages\cmake\data\share\cmake-3.28\Modules\CMakeRCInformation.cmake;C:\Python312\Lib\site-packages\cmake\data\share\cmake-3.28\Modules\CMakeSystemSpecificInformation.cmake;C:\Python312\Lib\site-packages\cmake\data\share\cmake-3.28\Modules\CMakeSystemSpecificInitialize.cmake;C:\Python312\Lib\site-packages\cmake\data\share\cmake-3.28\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Python312\Lib\site-packages\cmake\data\share\cmake-3.28\Modules\Compiler\MSVC-C.cmake;C:\Python312\Lib\site-packages\cmake\data\share\cmake-3.28\Modules\Compiler\MSVC-CXX.cmake;C:\Python312\Lib\site-packages\cmake\data\share\cmake-3.28\Modules\Compiler\MSVC.cmake;C:\Python312\Lib\site-packages\cmake\data\share\cmake-3.28\Modules\Platform\Windows-Initialize.cmake;C:\Python312\Lib\site-packages\cmake\data\share\cmake-3.28\Modules\Platform\Windows-MSVC-C.cmake;C:\Python312\Lib\site-packages\cmake\data\share\cmake-3.28\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Python312\Lib\site-packages\cmake\data\share\cmake-3.28\Modules\Platform\Windows-MSVC.cmake;C:\Python312\Lib\site-packages\cmake\data\share\cmake-3.28\Modules\Platform\Windows.cmake;C:\Python312\Lib\site-packages\cmake\data\share\cmake-3.28\Modules\Platform\WindowsPaths.cmake;C:\Users\developer\Task_Manager_Tool\build\CMakeFiles\3.28.1\CMakeCCompiler.cmake;C:\Users\developer\Task_Manager_Tool\build\CMakeFiles\3.28.1\CMakeCXXCompiler.cmake;C:\Users\developer\Task_Manager_Tool\build\CMakeFiles\3.28.1\CMakeRCCompiler.cmake;C:\Users\developer\Task_Manager_Tool\build\CMakeFiles\3.28.1\CMakeSystem.cmake;C:\Users\developer\Task_Manager_Tool\vcpkg-configuration.json;C:\Users\developer\Task_Manager_Tool\vcpkg.json;C:\Users\developer\Task_Manager_Tool\vcpkg\scripts\buildsystems\vcpkg.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\developer\Task_Manager_Tool\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:\Users\developer\Task_Manager_Tool\build\ZERO_CHECK.vcxproj">
+      <Project>{98DB6239-0DED-368E-AE5F-2DBC673C3969}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\developer\Task_Manager_Tool\build\src\admin.vcxproj">
+      <Project>{7D1514A9-40C3-3541-A3BA-264A757E5C97}</Project>
+      <Name>admin</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\developer\Task_Manager_Tool\build\example\helloworld.vcxproj">
+      <Project>{340CEF2C-C239-351F-ADE4-EF720C261F63}</Project>
+      <Name>helloworld</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\developer\Task_Manager_Tool\build\src\inputvalidator.vcxproj">
+      <Project>{E22D4C14-22DC-3A53-A5C8-12D5B8569821}</Project>
+      <Name>inputvalidator</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\developer\Task_Manager_Tool\build\main\main.vcxproj">
+      <Project>{4C7DFFF4-0E18-3537-A870-0FCFB444C7EF}</Project>
+      <Name>main</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\developer\Task_Manager_Tool\build\src\printhello.vcxproj">
+      <Project>{F6827B33-75F8-3A18-81DC-3E394CAB43B7}</Project>
+      <Name>printhello</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\developer\Task_Manager_Tool\build\src\task.vcxproj">
+      <Project>{328DE165-86C3-3405-802E-E4C91C77889C}</Project>
+      <Name>task</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\developer\Task_Manager_Tool\build\src\taskmanager.vcxproj">
+      <Project>{C7EE8BD8-8968-3415-BDE8-5097A2DE9786}</Project>
+      <Name>taskmanager</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\developer\Task_Manager_Tool\build\example\test_admin.vcxproj">
+      <Project>{4868692D-37CA-3E35-9A19-95D1933B91C0}</Project>
+      <Name>test_admin</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\developer\Task_Manager_Tool\build\example\test_task.vcxproj">
+      <Project>{F173668D-F41F-3202-BB55-989333A60010}</Project>
+      <Name>test_task</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\developer\Task_Manager_Tool\build\example\test_taskmanager.vcxproj">
+      <Project>{51DFA11E-E677-3F69-8D7F-9B0E8C1E14B1}</Project>
+      <Name>test_taskmanager</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\developer\Task_Manager_Tool\build\example\test_user.vcxproj">
+      <Project>{C46D1A16-7628-33A8-BF8A-0C7428C79159}</Project>
+      <Name>test_user</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\developer\Task_Manager_Tool\build\src\user.vcxproj">
+      <Project>{E693FFF7-FF01-30A6-B6FF-A7EDDF8D10B6}</Project>
+      <Name>user</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
